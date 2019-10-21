@@ -1,22 +1,38 @@
 import React from 'react';
 import StripeCheckout from 'react-stripe-checkout';
+import axios from 'axios';
 
-const onToken = token => {
-  console.log(token);
-  alert('payment successful');
-}
+import winter from '../../assets/images/winter-resize28.png';
 
 const StripeCheckoutButton = ({ price }) => {
   const priceForStripe = price * 100;
   const publishableKey = 'pk_test_LBnp367Zb5XklDLhtXFg1cgr00SIM9ArGv';
 
+  const onToken = token => {
+    axios({
+      url: 'payment',
+      method: 'post',
+      data: {
+        amount: priceForStripe, 
+        token 
+      }
+    }).then(response =>{
+      alert('Payment successful')
+    }).catch(error => {
+      console.log('Payment error: ', JSON.parse(error));
+      alert(
+        'There was an issue with your payment. Please use the provided credit card.'
+      );
+    })
+  }
+  
   return (
     <StripeCheckout 
       label='Pay Now'
       name='Crown Clothing Ltd'
       billingAddress
       shippingAddress
-      image='https://cdn.pixabay.com/photo/2016/11/05/20/08/red-nosed-1801283_960_720.png'
+      image={ winter }
       description={ `Your total is $${price}` }
       amount={ priceForStripe }
       panelLabel='Pay Now'

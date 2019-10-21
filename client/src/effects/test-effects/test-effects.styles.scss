@@ -1,0 +1,11 @@
+.test-effects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+  }
+  
+  .test-effects > .card {
+    margin-top: 25px;
+  }

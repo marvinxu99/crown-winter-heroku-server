@@ -3,8 +3,6 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-import './App.css';
-
 import Header from './components/header/header.component';
 import SignedInUser from './components/signed-in-user/signed-in-user.component';
 
@@ -20,6 +18,8 @@ import ReduxFlowPage from './pages/redux-flow/redux-flow.component';
 import { selectUserCurrentUser } from './redux/user/user.selectors';
 import { checkUserSession } from './redux/user/user.actions';
 
+import { GlobalStyle } from './global.styles';
+
 import { ReactComponent as LogoWinter } from './assets/images/winter-resized.svg';
 
 
@@ -30,6 +30,7 @@ const App = ({ currentUser, checkUserSession }) => {
   
   return (
     <div>
+      <GlobalStyle />
       <Header />
       {
         currentUser ? <SignedInUser /> : null
@@ -53,7 +54,7 @@ const App = ({ currentUser, checkUserSession }) => {
       <div className='winter-beautiful'>
         <LogoWinter />
         <a href='https://css-tricks.com/using-svg/' target='_blank' rel='noopener noreferrer'>
-          Winter is beautiful. <br />
+          Winter Beautiful. <br />
           Regular anchor tags work great.
         </a>
       </div>

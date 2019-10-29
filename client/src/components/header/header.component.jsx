@@ -27,7 +27,7 @@ const Header = ({ currentUser, hidden, signOutStart }) => (
   <HeaderContainer>
     <LogoContainer to="/">
       <LogoImg src= { winter2 } />
-      <span>Winter Beautiful.</span>
+      <span>Winter Beautiful</span>
     </LogoContainer>
 
     <OptionsContainer>

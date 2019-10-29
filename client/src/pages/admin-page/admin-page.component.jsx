@@ -22,10 +22,6 @@ const AdminPage = () => (
     <LoadShopDataDiv>
       <LoadShopData />
     </LoadShopDataDiv>
-    <div>
-      <h1>Custom Effects Example: useFetch()</h1>
-      <TestEffects />
-    </div>
 
     <WinterImageContainer>
       <WinterImageSmall style={{ backgroundImage: `url(${winter1})` }}></WinterImageSmall>

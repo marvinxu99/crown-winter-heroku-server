@@ -31,6 +31,15 @@ const Header = ({ currentUser, hidden, signOutStart }) => (
     </LogoContainer>
 
     <OptionsContainer>
+      <OptionLink to='/admin'>
+        ADMIN
+      </OptionLink>
+      <OptionLink to='/redux'>
+        REDUX
+      </OptionLink>
+      <OptionLink to='/home'>
+        HOME
+      </OptionLink>
       { /* Logic for displaying SIGN OUT or SIGN IN */
         currentUser ?
         <OptionDiv onClick={ signOutStart }>
@@ -41,15 +50,6 @@ const Header = ({ currentUser, hidden, signOutStart }) => (
           SIGN IN
         </OptionLink>
       }
-      <OptionLink to='/admin'>
-        ADMIN
-      </OptionLink>
-      <OptionLink to='/redux'>
-        REDUX
-      </OptionLink>
-      <OptionLink to='/home'>
-        HOME
-      </OptionLink>
       <OptionLink to='/shop'>
         SHOP
       </OptionLink>

@@ -3,9 +3,13 @@ import { connect } from 'react-redux';
 
 import { selectCollection } from '../../redux/shop/shop.selectors';
 import CollectionItem from '../../components/collection-item/collection-item.component';
+
+import PageNotFound from '../../pages/page-not-found/page-not-found.component';
+
 import './collection.styles.scss';
 
 const CollectionPage = ({ collection }) => {
+  if (!collection) return <PageNotFound />;
   
   const { title, items } = collection;
   return(

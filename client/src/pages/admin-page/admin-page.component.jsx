@@ -8,7 +8,7 @@ import {
     LoadShopDataDiv
   } from './admin-page.styles';
 
-import TestEffects from '../../effects/test-effects/test-effects.components';
+//import TestEffects from '../../effects/test-effects/test-effects.components';
 
 import winter1 from '../../assets/images/winter-winter.jpeg';
 import LoadShopData from '../../components/load-shop-data/load-shop-data.component';

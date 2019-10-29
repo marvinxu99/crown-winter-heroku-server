@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
 import Header from './components/header/header.component';
+import Spinner from './components/spinner/spinner.component';
+
 import SignedInUser from './components/signed-in-user/signed-in-user.component';
 
 import { selectUserCurrentUser } from './redux/user/user.selectors';
@@ -40,7 +42,7 @@ const App = ({ currentUser, checkUserSession }) => {
       }
       
       <Switch>
-        <Suspense fallback={<div>...Loading</div>}>
+        <Suspense fallback={ <Spinner /> }>
           <Route exact path='/' component={ HomePage } />
           <Route path='/shop' component={ ShopPage }  />
           <Route path='/home' render={ () => <Redirect to='/' /> } />

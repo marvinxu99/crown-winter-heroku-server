@@ -10,15 +10,16 @@ import {
 import { SignedInUserContainer, UserName } from './signed-in-user.styles';
 
 const SignedInUser = ({ currentUser, signedInDateTime }) => {
+  if (!currentUser) return null;
+
   const { displayName } = currentUser;
-  const dt_tm = new Date(signedInDateTime).toLocaleString();
+  const singed_in_dt_tm = new Date(signedInDateTime).toLocaleString();
+  
   return(
     <SignedInUserContainer>
-      { `Signed in as: ` }
-      <UserName>
-        { `${displayName}` }
-      </UserName>
-      { `, since: ${dt_tm}` }
+      { 'Signed in as: ' }
+      <UserName>{ `${ displayName }` }</UserName>
+      { `, since: ${ singed_in_dt_tm }` }
     </SignedInUserContainer> 
   );
 };

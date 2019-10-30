@@ -38,11 +38,7 @@ const App = ({ currentUser, checkUserSession }) => {
     <div>
       <GlobalStyle />
       <Header />
-      
-      {
-        currentUser ? <SignedInUser /> : null
-      }
-      
+      <SignedInUser />      
       <ErrorBoundary>
         <Switch>
           <Suspense fallback={ <Spinner /> }>

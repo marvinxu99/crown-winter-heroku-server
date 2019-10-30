@@ -1,10 +1,11 @@
 import React, { useEffect, lazy, Suspense } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Router, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
 import Header from './components/header/header.component';
 import Spinner from './components/spinner/spinner.component';
+import ErrorBoundary from './components/error-boundary/error-boundary.component';
 
 import SignedInUser from './components/signed-in-user/signed-in-user.component';
 
@@ -15,7 +16,8 @@ import { GlobalStyle } from './global.styles';
 
 import { ReactComponent as LogoWinter } from './assets/images/winter-resized.svg';
 
-import PageNotFound from './pages/page-not-found/page-not-found.component';
+//import PageNotFound from './pages/page-not-found/page-not-found.component';
+import { default as PageNotFound } from './pages/page-not-found2/page-not-found2.component';
 
 //import HomePage from './pages/homepage/homepage.component';
 const HomePage = lazy(() => import('./pages/homepage/homepage.component'));
@@ -41,21 +43,23 @@ const App = ({ currentUser, checkUserSession }) => {
         currentUser ? <SignedInUser /> : null
       }
       
-      <Switch>
-        <Suspense fallback={ <Spinner /> }>
-          <Route exact path='/' component={ HomePage } />
-          <Route path='/shop' component={ ShopPage }  />
-          <Route path='/home' render={ () => <Redirect to='/' /> } />
-          <Route path='/admin' component={ AdminPage } />
-          <Route path='/redux' component={ ReduxFlowPage } />
-          <Route path='/checkout' component={ CheckoutPage } />
-          <Route path='/contact' component={ ContactPage } />
-          <Route path='/signin' 
-            render={ () => currentUser ? (<Redirect to='/' />) : (<SignInAndSignUpPage />) } 
-          />
-        </Suspense>
-        <Route component={ PageNotFound } />    
-      </Switch>
+      <ErrorBoundary>
+        <Switch>
+          <Suspense fallback={ <Spinner /> }>
+            <Route exact path='/' component={ HomePage } />
+            <Route path='/shop' component={ ShopPage }  />
+            <Route path='/home' render={ () => <Redirect to='/' /> } />
+            <Route path='/admin' component={ AdminPage } />
+            <Route path='/redux' component={ ReduxFlowPage } />
+            <Route path='/checkout' component={ CheckoutPage } />
+            <Route path='/contact' component={ ContactPage } />
+            <Route path='/signin' 
+              render={ () => currentUser ? (<Redirect to='/' />) : (<SignInAndSignUpPage />) } 
+            />
+          </Suspense>
+          <Route component={ PageNotFound } />
+        </Switch>
+      </ErrorBoundary>
 
       <div className='winter-beautiful'>
         <LogoWinter />
@@ -64,7 +68,6 @@ const App = ({ currentUser, checkUserSession }) => {
           Regular anchor tags work great.
         </a>
       </div>
-
     </div>
   );
 }

@@ -6,7 +6,7 @@ import './page-not-found.styles.scss';
 
 const PageNotFound = () => (
   <div className="t-c p404-container">
-    <h1 className="p404-header">404 Error - Page not found</h1>
+    <h1 className="p404-header">Page not found (404 error)</h1>
       <Emoji className="p404-emoji" />
       <p className="p404-text">
         Sorry, we couldn't find what you are looking for

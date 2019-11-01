@@ -34,30 +34,31 @@ const Header = ({ currentUser, hidden, signOutStart }) => (
       <OptionLink to='/admin'>
         ADMIN
       </OptionLink>
-      <OptionLink to='/redux'>
-        REDUX
-      </OptionLink>
       <OptionLink to='/home'>
         HOME
-      </OptionLink>
-      { /* Logic for displaying SIGN OUT or SIGN IN */
-        currentUser ?
-        <OptionDiv onClick={ signOutStart }>
-          SIGN OUT
-        </OptionDiv>
-        :  
-        <OptionLink to='/signin'>
-          SIGN IN
-        </OptionLink>
-      }
-      <OptionLink to='/shop'>
-        SHOP
       </OptionLink>
       <OptionLink to='/contact'>
         CONTACT
       </OptionLink>       
+      { /* Logic for displaying SIGN OUT or SIGN IN */
+        currentUser ?
+          <OptionDiv onClick={ signOutStart }>
+            SIGN OUT
+          </OptionDiv>
+        :  
+          <OptionLink to='/signin'>
+            SIGN IN
+          </OptionLink>
+      }
+      <OptionLink to='/shop'>
+        SHOP
+      </OptionLink>
+      <OptionLink to='/orders'>
+        ORDERS
+      </OptionLink>
       <CartIcon />
     </OptionsContainer>
+
     { 
       hidden ? null : <CartDropdown />
     }

@@ -26,7 +26,7 @@ const ShopPage = lazy(() => import('./pages/shop/shop.component'));
 const SignInAndSignUpPage = lazy(() => import('./pages/sign-in-and-sign-up/sign-in-and-sign-up.component'));
 const ContactPage = lazy(() => import('./pages/contact/contact.component'));
 const CheckoutPage = lazy(() => import('./pages/checkout/checkout.component'));
-const ReduxFlowPage = lazy(() => import('./pages/redux-flow/redux-flow.component'));
+const OrdersPage = lazy(() => import('./pages/orders/orders.component'));
 
 
 const App = ({ currentUser, checkUserSession }) => {
@@ -46,7 +46,7 @@ const App = ({ currentUser, checkUserSession }) => {
             <Route path='/shop' component={ ShopPage }  />
             <Route path='/home' render={ () => <Redirect to='/' /> } />
             <Route path='/admin' component={ AdminPage } />
-            <Route path='/redux' component={ ReduxFlowPage } />
+            <Route path='/orders' component={ OrdersPage } />
             <Route path='/checkout' component={ CheckoutPage } />
             <Route path='/contact' component={ ContactPage } />
             <Route path='/signin' 

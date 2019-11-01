@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-export const ReduxFlowContainer = styled.div`
+export const OrdersPageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: start;
+  margin: 20px 30px;
 `;
-
 
 export const WinterImageContainer = styled.div`
   width: 120px;

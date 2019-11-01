@@ -1,25 +1,28 @@
 import React from 'react';
 
 import {
-  ReduxFlowContainer, 
+  OrdersPageContainer, 
   WinterImageContainer, 
   WinterImageSmall,
-} from './redux-flow.styles';
+} from './orders.styles';
 
 import winter1 from '../../assets/images/winter-winter.jpeg';
-import reduxflow from '../../assets/images/redux-flow.jpg';
 
-const ReduxFlowPage = () => (
-  <ReduxFlowContainer>
-    <h2>The follwing graph is from Andrei Neagoie & Yihua zhang's lecture re: redux</h2>
+const OrdersPage = () => (
+  <OrdersPageContainer>
+    <h2>Thank you for your Orders:</h2>
+    <p> You have ordered the following items [still under construction] </p>
+    <p>order #1</p>
+    <p>order #1</p>
+    <p>order #2</p>
+    
     <a style={{textDecoration: 'underline', marginBottom: '20px'}} href = 'https://www.npmjs.com/package/redux-thunk'>Link to Redux Thunk</a>
-    <img src = { reduxflow } alt='redux flow' />
 
     <WinterImageContainer>
       <WinterImageSmall style={{ backgroundImage: `url(${winter1})` }}></WinterImageSmall>
     </WinterImageContainer>
 
-  </ReduxFlowContainer>
+  </OrdersPageContainer>
 );
 
-export default ReduxFlowPage;
+export default OrdersPage;

@@ -22,6 +22,11 @@ import {
   getMultiDocsFromCollection 
 } from '../../firebase/test-cities.utils';
 
+import {
+  WarningPopup,
+  InfoPopup
+ } from '../../agnostics/components/menu-and-popup/popups-component'
+
 const AdminPage = () => (
   <AdminPageContainer>
     <AdminPageWarning>
@@ -60,13 +65,16 @@ const AdminPage = () => (
       </TestButton1>
 
       <TestButton2 
-        onClick={ getMultiDocsFromCollection }
+        onDoubleClick={ () => alert("you double clicked me.") }
         title="Welcome to click me."
       >
         Do Nothing
       </TestButton2>
 
     </ButtonContainer>
+
+    <WarningPopup content="WARNING WARNING" />
+    <InfoPopup content="information information" />
 
   </AdminPageContainer>
 );

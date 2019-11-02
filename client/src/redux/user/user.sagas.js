@@ -20,18 +20,13 @@ import {
 
 export function* getSnapshotFromUserAuth(userAuth, additionalData) {
   try {
-    console.log(userAuth);
-    console.log("additionalData = ", additionalData);
-
     const userRef = yield call(
       createUserProfileDocument, 
       userAuth,
       additionalData
     );
     const userSnapshot = yield userRef.get();
-    yield put(
-      signInSuccess({ id: userSnapshot.id, ...userSnapshot.data() })
-    );
+    yield put(signInSuccess({ id: userSnapshot.id, ...userSnapshot.data() }));
   } catch (error) {
     yield put(signInFailure(error));
   }
@@ -40,6 +35,7 @@ export function* getSnapshotFromUserAuth(userAuth, additionalData) {
 export function* signInWithGoogle() {
   try {
     //const userRef = yield auth.signInWithPopup(googleProvider);
+    //const { user } = userRef;
     const { user } = yield auth.signInWithPopup(googleProvider);
     yield getSnapshotFromUserAuth(user);
   } catch (error) {
@@ -86,10 +82,6 @@ export function* signUp({ payload: { email, password, displayName } }) {
 
 export function* signInAfterSignUp({ payload: { user, additionalData } }) {
   try {
-
-    console.log("signInAfterSignUp");
-    console.log('displayName =', additionalData);
-
     yield getSnapshotFromUserAuth(user, additionalData);
   } catch (error) {
     yield put(signInFailure(error));

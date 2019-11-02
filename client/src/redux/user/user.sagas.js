@@ -20,6 +20,9 @@ import {
 
 export function* getSnapshotFromUserAuth(userAuth, additionalData) {
   try {
+    console.log(userAuth);
+    console.log("additionalData = ", additionalData);
+
     const userRef = yield call(
       createUserProfileDocument, 
       userAuth,
@@ -72,18 +75,22 @@ export function* signOut() {
   }
 };
 
-export function* signUp({ payload: { email, password, displayName }}) {
+export function* signUp({ payload: { email, password, displayName } }) {
   try {
     const { user } = yield auth.createUserWithEmailAndPassword(email, password);
-    yield put(signUpSuccess({ user, addtionalData: {displayName} }));
+    yield put(signUpSuccess({ user, additionalData: {displayName} }));
   } catch (error) {
     yield put(signUpFailure(error));
   }
 };
 
-export function* signInAfterSignUp({ payload: { user, addtionalData } }) {
+export function* signInAfterSignUp({ payload: { user, additionalData } }) {
   try {
-    yield getSnapshotFromUserAuth(user, addtionalData);
+
+    console.log("signInAfterSignUp");
+    console.log('displayName =', additionalData);
+
+    yield getSnapshotFromUserAuth(user, additionalData);
   } catch (error) {
     yield put(signInFailure(error));
   }

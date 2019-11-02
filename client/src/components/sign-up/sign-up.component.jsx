@@ -29,7 +29,7 @@ const SignUp = ({ signUpStart }) => {
       return;
     }
 
-    signUpStart(email, password, displayName);
+    signUpStart(userCredentials);
   };
     
   const handleChange = event => {
@@ -95,8 +95,7 @@ const SignUp = ({ signUpStart }) => {
 }
   
 const mapDispatchToProps = dispatch =>({
-  signUpStart: (email, password, displayName) => 
-      dispatch(signUpStart({email, password, displayName}))
+  signUpStart: userCredentials => dispatch(signUpStart(userCredentials))
 });
 
 export default connect(null, mapDispatchToProps)(SignUp);

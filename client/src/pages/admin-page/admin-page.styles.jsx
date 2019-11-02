@@ -41,3 +41,42 @@ export const LoadShopDataDiv = styled.div`
   margin-left: 30px 30px;
 `;
 
+export const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  background-color: DodgerBlue;
+  margin: 20px 30px;
+`;
+
+export const TestButton1 = styled.button`
+  background-color: #f1f1f1;
+  width: 200px;
+  margin: 10px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 15px;
+  pointer-events: auto;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #545454;
+  }
+`;
+
+export const TestButton2 = styled.button`
+  border: none;
+  width: 200px;
+  //height: 32px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 15px;
+  background-color: #eee;
+  transition: all ease-in-out 0.9s;
+  cursor: pointer;
+
+  &:hover{
+    border: 1px solid #888;
+    background-color: #ddd;
+  }
+`;

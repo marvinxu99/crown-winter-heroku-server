@@ -73,7 +73,8 @@ const AdminPage = () => (
 
     </ButtonContainer>
 
-    <WarningPopup content="WARNING WARNING" />
+    <WarningPopup content="WARNING WARNING" /> 
+    <br />
     <InfoPopup content="information information" />
 
   </AdminPageContainer>

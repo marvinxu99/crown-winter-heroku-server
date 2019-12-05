@@ -5,6 +5,12 @@ export const AdminPageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: start;
+
+  & a {
+    text-decoration: underline;
+    color: blue;
+  }
+}
 `;
 
 export const AdminPageWarning = styled.h2`

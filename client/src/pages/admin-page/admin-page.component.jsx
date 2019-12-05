@@ -33,6 +33,7 @@ const AdminPage = () => (
       This page is intended for supervisors to perform administrative tasks. <br />
       USE WITH CAUTION.
     </AdminPageWarning>
+
     <LoadShopDataDiv>
       <LoadShopData />
     </LoadShopDataDiv>
@@ -77,6 +78,19 @@ const AdminPage = () => (
     <br />
     <InfoPopup content="information information" />
 
+    <div>
+      <h2>Quotes</h2>
+      <a href="https://www.youtube.com/watch?v=UvEiSa6_EPA" 
+        target='_blank' rel='noopener noreferrer'>
+        Nobody is smarter than you
+      </a> 
+      <br />
+      <a href="https://www.youtube.com/watch?v=zkTf0LmDqKI" 
+        target='_blank' rel='noopener noreferrer' >
+        Ask and you shall receive; networking is crucial in business as relationships are more important than product knowledge:
+      </a> 
+    </div>
+    
   </AdminPageContainer>
 );
 

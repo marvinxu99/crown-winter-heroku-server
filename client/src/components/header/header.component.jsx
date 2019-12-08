@@ -13,24 +13,27 @@ import { selectUserCurrentUser } from '../../redux/user/user.selectors';
 import { signOutStart } from '../../redux/user/user.actions';
 
 //import './header.styles.scss';
-import { 
-  HeaderContainer, 
-  LogoContainer, 
-  OptionsContainer, 
-  OptionLink, 
+import {
+  HeaderContainer,
+  LogoContainer,
+  OptionsContainer,
+  OptionLink,
   OptionDiv,
-  LogoImg 
+  LogoImg
 } from './header.styles';
 
 
 const Header = ({ currentUser, hidden, signOutStart }) => (
   <HeaderContainer>
     <LogoContainer to="/">
-      <LogoImg src= { winter2 } />
-      <span>Winter Beautiful</span>
+      <LogoImg src={winter2} />
+      <span>Winter Py Software</span>
     </LogoContainer>
 
     <OptionsContainer>
+      <OptionLink to='/python'>
+        PYTHON
+      </OptionLink>
       <OptionLink to='/admin'>
         ADMIN
       </OptionLink>
@@ -39,13 +42,13 @@ const Header = ({ currentUser, hidden, signOutStart }) => (
       </OptionLink>
       <OptionLink to='/contact'>
         CONTACT
-      </OptionLink>       
+      </OptionLink>
       { /* Logic for displaying SIGN OUT or SIGN IN */
         currentUser ?
-          <OptionDiv onClick={ signOutStart }>
+          <OptionDiv onClick={signOutStart}>
             SIGN OUT
           </OptionDiv>
-        :  
+          :
           <OptionLink to='/signin'>
             SIGN IN
           </OptionLink>
@@ -59,7 +62,7 @@ const Header = ({ currentUser, hidden, signOutStart }) => (
       <CartIcon />
     </OptionsContainer>
 
-    { 
+    {
       hidden ? null : <CartDropdown />
     }
   </HeaderContainer>
@@ -68,10 +71,10 @@ const Header = ({ currentUser, hidden, signOutStart }) => (
 const mapStateToProps = createStructuredSelector({
   currentUser: selectUserCurrentUser,
   hidden: selectCartHidden
-}); 
+});
 
 const mapDispatchToProps = dispatch => ({
   signOutStart: () => dispatch(signOutStart())
-}); 
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

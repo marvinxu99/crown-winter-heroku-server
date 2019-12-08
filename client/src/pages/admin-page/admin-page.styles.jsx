@@ -10,7 +10,6 @@ export const AdminPageContainer = styled.div`
     text-decoration: underline;
     color: blue;
   }
-}
 `;
 
 export const AdminPageWarning = styled.h2`

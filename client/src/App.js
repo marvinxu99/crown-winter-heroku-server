@@ -27,33 +27,35 @@ const SignInAndSignUpPage = lazy(() => import('./pages/sign-in-and-sign-up/sign-
 const ContactPage = lazy(() => import('./pages/contact/contact.component'));
 const CheckoutPage = lazy(() => import('./pages/checkout/checkout.component'));
 const OrdersPage = lazy(() => import('./pages/orders/orders.component'));
+const PyPage = lazy(() => import('./pages/python/py.component'));
 
 
 const App = ({ currentUser, checkUserSession }) => {
   useEffect(() => {
     checkUserSession();
   }, [checkUserSession]);
-  
+
   return (
     <div>
       <GlobalStyle />
       <Header />
-      <SignedInUser />      
+      <SignedInUser />
       <ErrorBoundary>
         <Switch>
-          <Suspense fallback={ <Spinner /> }>
-            <Route exact path='/' component={ HomePage } />
-            <Route path='/shop' component={ ShopPage }  />
-            <Route path='/home' render={ () => <Redirect to='/' /> } />
-            <Route path='/admin' component={ AdminPage } />
-            <Route path='/orders' component={ OrdersPage } />
-            <Route path='/checkout' component={ CheckoutPage } />
-            <Route path='/contact' component={ ContactPage } />
-            <Route path='/signin' 
-              render={ () => currentUser ? (<Redirect to='/' />) : (<SignInAndSignUpPage />) } 
+          <Suspense fallback={<Spinner />}>
+            <Route exact path='/' component={HomePage} />
+            <Route path='/shop' component={ShopPage} />
+            <Route path='/home' render={() => <Redirect to='/' />} />
+            <Route path='/admin' component={AdminPage} />
+            <Route path='/orders' component={OrdersPage} />
+            <Route path='/checkout' component={CheckoutPage} />
+            <Route path='/contact' component={ContactPage} />
+            <Route path='/signin'
+              render={() => currentUser ? (<Redirect to='/' />) : (<SignInAndSignUpPage />)}
             />
+            <Route path='/python' component={PyPage} />
           </Suspense>
-          <Route component={ PageNotFound } />
+          <Route component={PageNotFound} />
         </Switch>
       </ErrorBoundary>
 

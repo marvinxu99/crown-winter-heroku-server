@@ -1,0 +1,15 @@
+.py-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  a {
+    text-decoration: underline;
+    color: blue;
+  }
+}
+
+.winter-small {
+    width: 120px;
+    height: 120px;
+}

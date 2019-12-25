@@ -31,6 +31,9 @@ const Header = ({ currentUser, hidden, signOutStart }) => (
     </LogoContainer>
 
     <OptionsContainer>
+      <OptionLink to='/crypto'>
+        CRYPTOGRAPHY
+      </OptionLink>
       <OptionLink to='/python'>
         PYTHON
       </OptionLink>

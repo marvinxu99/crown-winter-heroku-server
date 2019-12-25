@@ -28,6 +28,7 @@ const ContactPage = lazy(() => import('./pages/contact/contact.component'));
 const CheckoutPage = lazy(() => import('./pages/checkout/checkout.component'));
 const OrdersPage = lazy(() => import('./pages/orders/orders.component'));
 const PyPage = lazy(() => import('./pages/python/py.component'));
+const CryptoPage = lazy(() => import('./pages/crypto/crypto.component'));
 
 
 const App = ({ currentUser, checkUserSession }) => {
@@ -54,6 +55,7 @@ const App = ({ currentUser, checkUserSession }) => {
               render={() => currentUser ? (<Redirect to='/' />) : (<SignInAndSignUpPage />)}
             />
             <Route path='/python' component={PyPage} />
+            <Route path='/crypto' component={CryptoPage} />
           </Suspense>
           <Route component={PageNotFound} />
         </Switch>

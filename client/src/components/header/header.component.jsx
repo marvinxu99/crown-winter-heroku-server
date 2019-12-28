@@ -27,7 +27,7 @@ const Header = ({ currentUser, hidden, signOutStart }) => (
   <HeaderContainer>
     <LogoContainer to="/">
       <LogoImg src={winter2} />
-      <span>Winter Py Software</span>
+      <span>WinnPy Software</span>
     </LogoContainer>
 
     <OptionsContainer>

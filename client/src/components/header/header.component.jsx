@@ -4,7 +4,8 @@ import { createStructuredSelector } from 'reselect';
 
 //import { ReactComponent as Logo } from '../../assets/crown.svg';
 //import { ReactComponent as Logo } from '../../assets/images/winter-resized.svg';
-import winter2 from '../../assets/images/winter-winter.jpeg';
+//import winter2 from '../../assets/images/winter-winter.jpeg';
+import winter2 from '../../assets/images/winter_winter3.png';
 
 import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';

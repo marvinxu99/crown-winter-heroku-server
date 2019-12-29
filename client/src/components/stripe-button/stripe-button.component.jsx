@@ -45,11 +45,11 @@ const StripeCheckoutButton = ({ price, clearCartAfterPayment, history }) => {
   return (
     <StripeCheckout 
       label='Pay Now'
-      name='Winter Saga Ltd'
+      name='WinnPy Software Ltd'
       billingAddress
       shippingAddress
       image={ winter }
-      description={ `Your total is $${price}` }
+      description={ `Your TOTAL is: $${price}` }
       amount={ priceForStripe }
       panelLabel='Pay Now'
       token={ onToken }

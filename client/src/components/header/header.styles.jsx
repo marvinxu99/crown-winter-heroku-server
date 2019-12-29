@@ -20,7 +20,7 @@ export const HeaderContainer = styled.div`
 export const LogoContainer = styled(Link)`
   height: 100%;
   width: 120px;
-  padding: 5px;
+  padding: 5px 5px 5px 15px;
   display: flex;
   flex-direction: column;
   color: white

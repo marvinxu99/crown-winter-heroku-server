@@ -8,7 +8,6 @@ export const HeaderContainer = styled.div`
   justify-content: space-between;
   margin-bottom: 0px;
   background-color: #6AAA01;  //#A9F214; 
-  font-weight: bold
 
   @media screen and (max-width: 800px) {
     height: 60px;
@@ -24,6 +23,7 @@ export const LogoContainer = styled(Link)`
   display: flex;
   flex-direction: column;
   color: white
+  font-weight: bold;
 
   @media screen and (max-width: 800px) {
     height: 50px;
@@ -47,11 +47,15 @@ export const OptionsContainer = styled.div`
 export const OptionLink = styled(Link)`
   padding: 10px 15px;
   cursor: pointer;
+  color: white;
+  font-weight: bold;
 `;
 
 export const OptionDiv = styled.div`
   padding: 10px 15px;
   cursor: pointer;
+  color: white
+  font-weight: bold;
 `;
 
 export const LogoImg = styled.img`

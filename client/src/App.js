@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
 import Header from './components/header/header.component';
+import Footer from './components/footer/footer.component';
 import Spinner from './components/spinner/spinner.component';
 import ErrorBoundary from './components/error-boundary/error-boundary.component';
 
@@ -14,7 +15,7 @@ import { checkUserSession } from './redux/user/user.actions';
 
 import { GlobalStyle } from './global.styles';
 
-import { ReactComponent as LogoWinter } from './assets/images/winter-resized.svg';
+//import { ReactComponent as LogoWinter } from './assets/images/winter-resized.svg';
 
 //import PageNotFound from './pages/page-not-found/page-not-found.component';
 import { default as PageNotFound } from './pages/page-not-found2/page-not-found2.component';
@@ -39,7 +40,7 @@ const App = ({ currentUser, checkUserSession }) => {
   return (
     <div>
       <GlobalStyle />
-      <Header />
+      <Header class='app-header' />
       <SignedInUser />
       <ErrorBoundary>
         <Switch>
@@ -60,14 +61,7 @@ const App = ({ currentUser, checkUserSession }) => {
           <Route component={PageNotFound} />
         </Switch>
       </ErrorBoundary>
-
-      <div className='winter-beautiful'>
-        <LogoWinter />
-        <a href='https://css-tricks.com/using-svg/' target='_blank' rel='noopener noreferrer'>
-          Winter Beautiful. <br />
-          Regular anchor tags work great.
-        </a>
-      </div>
+      <Footer />
     </div>
   );
 }

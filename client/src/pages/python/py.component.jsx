@@ -35,8 +35,6 @@ const PyPage = () => (
 	  
     </ul>
 
-
-A Practical Introduction to K-Nearest Neighbors Algorithm for Regression (with Python code)
     <img className='winter-small' src={winter2} alt='winter the dog' />
   </div >
 );

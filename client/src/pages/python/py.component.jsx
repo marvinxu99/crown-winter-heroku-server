@@ -21,7 +21,22 @@ const PyPage = () => (
     </ul>
 
     <h2>Machine Learning</h2>
+	Steps:
+	<ol>
+		<li>import the data</li>
+		<li>Clean the data</li>
+		<li>Split data. Training Set/Test set</li>
+		<li>Create a Model</li>
+		<li>Check the output</li>
+	</ol>	
+
     <ul>
+	  <li style={{ padding: "5px" }}><a href='https://medium.com/machine-learning-for-humans/why-machine-learning-matters-6164faf1df12' target='_blank' rel='noopener noreferrer'>Machine Learning for Humans</a>
+	  </li>
+	  <li style={{ padding: "5px" }}><a href='https://docs.google.com/presentation/d/1kSuQyW5DTnkVaZEjGYCkfOxvzCqGEFzWBy4e9Uedd9k/preview?imm_mid=0f9b7e&cmp=em-data-na-na-newsltr_20171213&slide=id.g183f28bdc3_0_90' target='_blank' rel='noopener noreferrer'>ML slide deck</a>
+	  </li>
+	  <li style={{ padding: "5px" }}><a href='https://vas3k.com/blog/machine_learning/' target='_blank' rel='noopener noreferrer'>ML for everyone</a>
+	  </li>
       <li style={{ padding: "5px" }}><a href="https://machinelearningmastery.com/how-machine-learning-algorithms-work/" target='_blank' 
 		rel='noopener noreferrer'>How Machine Learning Algorithms Work</a>
 	  </li>
@@ -31,6 +46,11 @@ const PyPage = () => (
       <li style={{ padding: "5px" }}><a href="https://www.analyticsvidhya.com/blog/2018/08/k-nearest-neighbor-introduction-regression-python/"
         target='_blank' rel='noopener noreferrer'>A Practical Introduction to K-Nearest Neighbors Algorithm for Regression (with Python code)</a>
 	  </li>
+	  <li style={{ padding: "5px" }}><a href='https://scikit-learn.org/stable/tutorial/basic/tutorial.html' target='_blank' rel='noopener noreferrer'>An introduction to machine learning with scikit-learn</a>
+	  </li>
+	  <li style={{ padding: "5px" }}><a href='https://www.kaggle.com/' target='_blank' rel='noopener noreferrer'>Kaggle Datasets</a></li>
+	  <li style={{ padding: "5px" }}><a href='https://www.anaconda.com/' target='_blank' rel='noopener noreferrer'>Anaconda</a></li>
+	  
       <li style={{ padding: "5px" }}>...more on the way</li>
 	  
     </ul>

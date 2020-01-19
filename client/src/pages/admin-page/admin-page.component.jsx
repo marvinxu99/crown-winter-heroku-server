@@ -15,6 +15,7 @@ import {
 
 import winter1 from '../../assets/images/winter-winter.jpeg';
 import LoadShopData from '../../components/load-shop-data/load-shop-data.component';
+import aristotle_involve_me from '../../assets/images/aristotle_involve_me.jpg';
 
 import { 
   loadTestCityData, 
@@ -30,9 +31,12 @@ import {
 const AdminPage = () => (
   <AdminPageContainer>
     <AdminPageWarning>
-      This page is intended for supervisors to perform administrative tasks. <br />
-      USE WITH CAUTION.
+      This page is intended for supervisors to perform administrative tasks. USE WITH CAUTIONS.
     </AdminPageWarning>
+
+	<div>
+		<img src={aristotle_involve_me} alt='Aristotle Picture' />
+	</div>
 
     <LoadShopDataDiv>
       <LoadShopData />
@@ -90,6 +94,7 @@ const AdminPage = () => (
         Ask and you shall receive; networking is crucial in business as relationships are more important than product knowledge:
       </a> 
     </div>
+	
     
   </AdminPageContainer>
 );

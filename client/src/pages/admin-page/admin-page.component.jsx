@@ -35,7 +35,7 @@ const AdminPage = () => (
     </AdminPageWarning>
 
 	<div>
-		<img src={aristotle_involve_me} alt='Aristotle Picture' />
+		<img src={aristotle_involve_me} alt='aristotle' />
 	</div>
 
     <LoadShopDataDiv>

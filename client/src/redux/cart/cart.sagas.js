@@ -16,12 +16,13 @@ export function* clearCartOnSignOut() {
 
 export function* updateCartInFirebase() {
   const currentUser = yield select(selectUserCurrentUser);
+  const updatedAt = new Date();
   
   if (currentUser) {
     try {
       const cartRef = yield getUserCartRef(currentUser.id);
       const cartItems = yield select(selectCartItems);
-      yield cartRef.update({ cartItems });
+      yield cartRef.update({ cartItems, updatedAt });
     } catch (error) {
       console.log(error);
     }

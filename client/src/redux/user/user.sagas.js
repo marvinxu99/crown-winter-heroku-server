@@ -12,7 +12,8 @@ import {
 
 import { 
   auth, 
-  googleProvider, 
+  googleProvider,
+  twitterProvider,
   createUserProfileDocument,
   getCurrentUser
 } from '../../firebase/firebase.utils';
@@ -37,6 +38,15 @@ export function* signInWithGoogle() {
     //const userRef = yield auth.signInWithPopup(googleProvider);
     //const { user } = userRef;
     const { user } = yield auth.signInWithPopup(googleProvider);
+    yield getSnapshotFromUserAuth(user);
+  } catch (error) {
+    yield put(signInFailure(error));
+  }
+};
+
+export function* signInWithTwitter() {
+  try {
+    const { user } = yield auth.signInWithPopup(twitterProvider);
     yield getSnapshotFromUserAuth(user);
   } catch (error) {
     yield put(signInFailure(error));
@@ -92,6 +102,10 @@ export function* onGoogleSignInStart() {
   yield takeLatest(UserActionTypes.GOOGLE_SIGN_IN_START, signInWithGoogle);
 }
 
+export function* onTwitterSignInStart() {
+  yield takeLatest(UserActionTypes.TWITTER_SIGN_IN_START, signInWithTwitter);
+}
+
 export function* onEmailSignInStart() {
   yield takeLatest(UserActionTypes.EMAIL_SIGN_IN_START, signInWithEmail)
 }
@@ -115,6 +129,7 @@ export function* onSignUpSuccess() {
 export function* userSagas() {
   yield all([
     call(onGoogleSignInStart), 
+    call(onTwitterSignInStart), 
     call(onEmailSignInStart),
     call(onCheckUserSession),
     call(onSignOutStart),

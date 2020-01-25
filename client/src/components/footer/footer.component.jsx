@@ -13,7 +13,7 @@ import {
 
 const Footer = () => (
   <FooterContainer>
-    <LogoContainer>
+    <LogoContainer to='/contact'>
       <LogoImg src={ww_logo} />
       <div>
         <span>Created by WinnPy Software</span>

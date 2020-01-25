@@ -4,12 +4,15 @@ import { connect } from 'react-redux';
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 
-import { googleSignInStart, emailSignInStart } from '../../redux/user/user.actions';
+import { 
+  googleSignInStart, 
+  twitterSignInStart, 
+  emailSignInStart } from '../../redux/user/user.actions';
 
 import './sign-in.styles.scss';
 
 
-const SignIn = ({ emailSignInStart, googleSignInStart }) => {
+const SignIn = ({ emailSignInStart, googleSignInStart, twitterSignInStart }) => {
   const [userCredentials, setCredentials] = useState({ 
     email: '', 
     password: '' 
@@ -52,13 +55,15 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
         />
         <div className='buttons'>
           <CustomButton type='submit'>Sign in</CustomButton>
-          <CustomButton 
-            type='button' 
-            onClick={ googleSignInStart } 
-            isGoogleSignIn
-          >
-            {' '}
-            Sign in with Google{' '}
+        </div>
+        <div className='buttons'>
+          <CustomButton type='button' onClick={ googleSignInStart } isGoogleSignIn >
+            {' '} Sign in with Google{' '}
+          </CustomButton>
+        </div>
+        <div className='buttons'>
+          <CustomButton type='button' onClick={ twitterSignInStart } isTwitterSignIn >
+            {' '}Sign in with Twitter{' '}
           </CustomButton>
         </div>
       </form>
@@ -68,6 +73,7 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
 
 const mapDispatchToProps = dispatch => ({
   googleSignInStart: () => dispatch(googleSignInStart()),
+  twitterSignInStart: () => dispatch(twitterSignInStart()),
   emailSignInStart: (email, password) => dispatch(emailSignInStart({ email, password }))
 })
 

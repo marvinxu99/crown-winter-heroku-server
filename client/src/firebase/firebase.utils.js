@@ -87,11 +87,11 @@ export const firestore = firebase.firestore();
 
 export const googleProvider = new firebase.auth.GoogleAuthProvider();
 googleProvider.setCustomParameters({ prompt: 'select_account' });
-//export const signInWithGoogle = () => auth.signInWithPopup(googleProvider);
+export const signInWithGoogle = () => auth.signInWithPopup(googleProvider);
 
 //https://firebase.google.com/docs/auth/web/twitter-login
 export const twitterProvider = new firebase.auth.TwitterAuthProvider();
-//export const singInWithTwitter = () => firebase.auth().signInWithPopup(twitterProvider)
+export const singInWithTwitter = () => firebase.auth().signInWithPopup(twitterProvider);
 //	.then(function(result) {
 //		// This gives you a the Twitter OAuth 1.0 Access Token and Secret.
 //		// You can use these server side with your app's credentials to access the Twitter API.
@@ -119,7 +119,7 @@ export const twitterProvider = new firebase.auth.TwitterAuthProvider();
 // https://firebase.google.com/docs/auth/web/github-auth
 export const githubProvider = new firebase.auth.GithubAuthProvider();
 githubProvider.setCustomParameters({ 'allow_signup': 'false' });
-//export const singInWithGithub = () => firebase.auth().signInWithPopup(githubProvider);
+export const singInWithGithub = () => firebase.auth().signInWithPopup(githubProvider);
 
 
 export default firebase;

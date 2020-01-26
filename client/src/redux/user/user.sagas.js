@@ -1,19 +1,20 @@
 import { takeLatest, put, all, call } from 'redux-saga/effects';
 
 import UserActionTypes from './user.types';
-import { 
-  signInSuccess, 
-  signInFailure, 
+import {
+  signInSuccess,
+  signInFailure,
   signOutSuccess,
   signOutFailure,
   signUpSuccess,
   signUpFailure
 } from './user.actions';
 
-import { 
-  auth, 
+import {
+  auth,
   googleProvider,
   twitterProvider,
+  githubProvider,
   createUserProfileDocument,
   getCurrentUser
 } from '../../firebase/firebase.utils';
@@ -22,7 +23,7 @@ import {
 export function* getSnapshotFromUserAuth(userAuth, additionalData) {
   try {
     const userRef = yield call(
-      createUserProfileDocument, 
+      createUserProfileDocument,
       userAuth,
       additionalData
     );
@@ -53,6 +54,17 @@ export function* signInWithTwitter() {
   }
 };
 
+export function* signInWithGithub() {
+  try {
+    const { user } = yield auth.signInWithPopup(githubProvider);
+    //console.log(user)
+    yield getSnapshotFromUserAuth(user);
+  } catch (error) {
+    console.log(error)
+    yield put(signInFailure(error));
+  }
+};
+
 export function* signInWithEmail({ payload: { email, password } }) {
   try {
     const { user } = yield auth.signInWithEmailAndPassword(email, password);
@@ -67,7 +79,7 @@ export function* isUserAuthenticated() {
     const userAuth = yield getCurrentUser();
     if (!userAuth) return;
     yield getSnapshotFromUserAuth(userAuth);
-  } catch(error) {
+  } catch (error) {
     yield put(signInFailure(error));
   }
 };
@@ -76,7 +88,7 @@ export function* signOut() {
   try {
     yield auth.signOut();
     yield put(signOutSuccess());
-  } catch(error) {
+  } catch (error) {
     yield put(signOutFailure(error));
   }
 };
@@ -84,7 +96,7 @@ export function* signOut() {
 export function* signUp({ payload: { email, password, displayName } }) {
   try {
     const { user } = yield auth.createUserWithEmailAndPassword(email, password);
-    yield put(signUpSuccess({ user, additionalData: {displayName} }));
+    yield put(signUpSuccess({ user, additionalData: { displayName } }));
   } catch (error) {
     yield put(signUpFailure(error));
   }
@@ -104,6 +116,10 @@ export function* onGoogleSignInStart() {
 
 export function* onTwitterSignInStart() {
   yield takeLatest(UserActionTypes.TWITTER_SIGN_IN_START, signInWithTwitter);
+}
+
+export function* onGithubSignInStart() {
+  yield takeLatest(UserActionTypes.GITHUB_SIGN_IN_START, signInWithGithub);
 }
 
 export function* onEmailSignInStart() {
@@ -128,8 +144,9 @@ export function* onSignUpSuccess() {
 
 export function* userSagas() {
   yield all([
-    call(onGoogleSignInStart), 
-    call(onTwitterSignInStart), 
+    call(onGoogleSignInStart),
+    call(onTwitterSignInStart),
+    call(onGithubSignInStart),
     call(onEmailSignInStart),
     call(onCheckUserSession),
     call(onSignOutStart),

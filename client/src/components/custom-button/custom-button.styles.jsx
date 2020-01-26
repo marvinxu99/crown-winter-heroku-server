@@ -39,7 +39,7 @@ const googleSignInStyles = css`
 `;
 
 const getButtonStyles = props => {
-  if (props.isGoogleSignIn || props.isTwitterSignIn) {
+  if (props.isOAuthSignIn) {
     return googleSignInStyles;
   }
 

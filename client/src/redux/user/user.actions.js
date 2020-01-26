@@ -8,6 +8,10 @@ export const twitterSignInStart = () => ({
   type: UserActionTypes.TWITTER_SIGN_IN_START
 });
 
+export const githubSignInStart = () => ({
+  type: UserActionTypes.GITHUB_SIGN_IN_START
+});
+
 export const emailSignInStart = emailAndPassword => ({
   type: UserActionTypes.EMAIL_SIGN_IN_START,
   payload: emailAndPassword
@@ -15,7 +19,7 @@ export const emailSignInStart = emailAndPassword => ({
 
 export const signInSuccess = user => ({
   type: UserActionTypes.SIGN_IN_SUCCESS,
-  payload: user 
+  payload: user
 });
 
 export const signInFailure = error => ({

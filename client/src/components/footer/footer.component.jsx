@@ -12,41 +12,44 @@ import {
 } from './footer.styles';
 
 const Footer = () => (
-  <FooterContainer>
-    <LogoContainer to='/contact'>
-      <LogoImg src={ww_logo} />
-      <div>
-        <span>Created by WinnPy Software</span>
-      </div>
-    </LogoContainer>
-    <OptionDiv>
-      Place Holder
-    </OptionDiv>
-    <OptionDiv>
-      Place Holder
-    </OptionDiv>
-    <OptionDiv>
-      Place Holder
-    </OptionDiv>
-    <OptionDiv>
-      Place Holder
-    </OptionDiv>
-    <OptionDiv>
-      Place Holder
-    </OptionDiv>
-    <OptionDiv>
-      Place Holder
-    </OptionDiv>
-    <OptionDiv>
-      Place Holder
-    </OptionDiv>
-    <OptionsContainer>
-      <OptionLink to='/crypto'>
-        CRYPTOGRAPHY
-      </OptionLink>
-    </OptionsContainer>
+  <div>
+	  <hr />
+	  <FooterContainer>
+		<LogoContainer to='/contact'>
+		  <LogoImg src={ww_logo} />
+		  <div>
+			<span>© Winter WinnPy 2020</span>
+		  </div>
+		</LogoContainer>
+		<OptionDiv>
+		  Place Holder
+		</OptionDiv>
+		<OptionDiv>
+		  Place Holder
+		</OptionDiv>
+		<OptionDiv>
+		  Place Holder
+		</OptionDiv>
+		<OptionDiv>
+		  Place Holder
+		</OptionDiv>
+		<OptionDiv>
+		  Place Holder
+		</OptionDiv>
+		<OptionDiv>
+		  Place Holder
+		</OptionDiv>
+		<OptionDiv>
+		  Place Holder
+		</OptionDiv>
+		<OptionsContainer>
+		  <OptionLink to='/crypto'>
+			CRYPTOGRAPHY
+		  </OptionLink>
+		</OptionsContainer>
 
-  </FooterContainer>
+	  </FooterContainer>
+  </div>
 );
 
 export default Footer;

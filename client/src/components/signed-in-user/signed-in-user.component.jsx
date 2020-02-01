@@ -18,7 +18,7 @@ const SignedInUser = ({ currentUser, signedInDateTime }) => {
 	  
 	return(
 	  <SignedInUserContainer>
-		{ 'Signed in as: ' }
+		{ 'Signed in as: ' } 
 		<UserName>{ `${ displayName }` }</UserName>
 		{ `, since: ${ singed_in_dt_tm }` }
 	  </SignedInUserContainer> 

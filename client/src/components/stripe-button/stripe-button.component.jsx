@@ -34,7 +34,7 @@ const StripeCheckoutButton = ({ price, clearCartAfterPayment, history }) => {
       history.push('/orders');
 
     }).catch(error => {
-      //console.log('Payment error: ', JSON.parse(error));
+      // console.log('Payment error: ', JSON.parse(error));
       console.log('Payment error: ', error);
       alert(
         'There was an issue with your payment. Please use the provided credit card.'
@@ -45,7 +45,7 @@ const StripeCheckoutButton = ({ price, clearCartAfterPayment, history }) => {
   return (
     <StripeCheckout 
       label='Pay Now'
-      name='WinnPy Software Ltd'
+      name='Winter WinnPy'
       billingAddress
       shippingAddress
       image={ winter }

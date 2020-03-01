@@ -1,0 +1,18 @@
+(1) Install Node.js and NPM:  https://nodejs.org/en/
+
+(2) To discover new releases of the packages, you run 
+	>npm outdated
+
+(3) To update to a new major version for all the packages, 
+install the npm-check-updates package globally:
+> npm install -g npm-check-updates
+> ncu -u
+> npm install   OR npm update
+
+*****
+If you just downloaded the project without the node_modules 
+dependencies and you want to install the shiny new versions 
+first, just run
+> npm install
+
+https://flaviocopes.com/update-npm-dependencies/
